@@ -20,7 +20,7 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:latest
 
     - name: Tag the image
-      run: docker tag scrapebo7 "${{ secrets.DOCKER_USERNAME }}"/b07:latest
+      run: docker tag my-image-name:latest "${{ secrets.DOCKER_USERNAME }}/b07:latest"
 
     - name: Push the Docker image
-      run: docker push "${{ secrets.DOCKER_USERNAME }}"/b07:latest
+      run: docker push "${{ secrets.DOCKER_USERNAME }}/b07:latest"
