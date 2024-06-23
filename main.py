@@ -18,7 +18,7 @@ tree = bot.tree
 
 @bot.event
 async def on_ready():
-    print("bot is ready")
+    print("Boot is ready")
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} commands")
