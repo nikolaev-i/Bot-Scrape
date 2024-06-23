@@ -27,7 +27,8 @@ async def on_ready():
 
 @bot.tree.command(name='word', description='get a random word')
 async def hello(interaction: discord.Interaction):
-    name,desc = to_scrape()
-    await interaction.response.send_message(f"Дума: {name[0]}\nОписание: {desc}")
+    name, desc, example = to_scrape()
+    await interaction.response.send_message(f"Дума: {name}\nОписание: {desc}\nПример: {example}")
+
 
 bot.run(TOKEN)
