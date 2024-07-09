@@ -1,6 +1,6 @@
 # bot.py
 import os
-
+from food import get_food
 import discord
 import random
 from discord import app_commands
@@ -29,6 +29,12 @@ async def on_ready():
 async def hello(interaction: discord.Interaction):
     name, desc, example = to_scrape()
     await interaction.response.send_message(f"Дума: {name}\nОписание: {desc}\nПример: {example}")
+
+@bot.tree.command(name='kakvo_da_qm', description='предложения за ядене')
+async def food(interaction: discord.Interaction):
+    food_place = get_food()
+    await interaction.response.send_message(f"{food_place}")
+
 
 
 bot.run(TOKEN)
